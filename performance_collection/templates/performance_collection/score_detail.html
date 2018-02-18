@@ -1,0 +1,68 @@
+{% extends 'performance_collection\base.html' %}
+
+{% block head_title %}Scores | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+<div class="container"><hr />
+<div class="col-sm-6">
+<h3>{{ object.title }} <small> ({{ object.collection }} collection)</small></h3>
+<p><b>Call Number : </b>{{ object.call_number }}</P>
+<p><b>Composer : </b>{{ object.author }}</P>
+{% if object.uniform_title %}<p><b>Uniform Title : </b>{{ object.uniform_title }}</p> {% endif %}
+{% if object.place_of_publication %}
+<p><b>Imprint : </b> {{ object.place_of_publication }}{% endif %} : {{ object.publisher }}{% if object.date_of_publication %}  ; {{ object.date_of_publication }}{%endif %}{% if object.copyright_date %} ; {{ object.copyright_date }}{% endif %}</p>
+{% if object.collation %}
+<p><b>Details : </b>{{ object.collation }}</P>{% endif %}
+{% if object.subject %}
+<p><b>Subject : </b> {{ object.subject }}</P>{% endif %}
+  {% if score.publisher_number %}
+  <p><strong>Publisher Number :</strong> {{ score.publisher_number }}</a></p>
+  {% endif %}
+
+</div>
+<div class="col-sm-6" style="background-color: #F5F5F5 ; border:1px solid DarkGrey">
+<h3><small><b>Extended information : </b></small></h3>
+    {% if score.arranger %}
+<strong>Arranger:</strong> {{ score.arranger }}</a><br />
+    {% endif %}
+    {% if score.editor %}
+<strong>Editor:</strong> {{ score.editor }}</a><br />
+{% endif %}
+{% if score.plate_number %}
+<strong>Plate Number:</strong> {{ score.plate_number }}</a><br />
+{% endif %}
+{% if score.holdings %}
+<strong>Holdings:</strong> {{ score.holdings }}</a><br />
+{% endif %}
+{% if score.medium %}
+<strong>Medium:</strong> {{ score.medium }}</a><br />
+{% endif %}
+{% if score.key_signature %}
+<strong>Key signature:</strong> {{ score.key_signature }}</a><br />
+{% endif %}
+{% if score.condition %}
+<strong>Condition:</strong> {{ score.condition }}</a><br />
+{% endif %}
+{% if score.missing %}
+<strong>Missing:</strong> {{ score.missing }}</a><br />
+{% endif %}
+{% if score.level %}
+<strong>Level:</strong> {{ score.level }}</a><br />
+{% endif %}
+{% if score.contents %}
+<strong>Contents:</strong> {{ score.contents }}</a><br />
+{% endif %}
+{% if score.duration %}
+<strong>Duration:</strong> {{ score.duration }}</a><br />
+{% endif %}<br />
+ </div>
+
+ <div class="col-sm-12"><hr />
+
+ {% if score.notes %}<h3><small>Notes :</small></h3>
+<p> {{ score.notes }}</a></p>
+{% endif %}
+ </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'performance_collection\base.html' %}
+{% block content %}
+<h2><small>Item List</small></h2>
+
+    {% for obj in filter.qs %}
+        {{ obj.name }} - ${{ obj.Call_number }}<br />
+    {% endfor %}
+
+{% for obj in score_list %}
+    <li><a href='/performance_collection/{{ obj.slug }}/'>{{ obj }}</a>
+    <i>{{ obj.Call_number }}</i> {{ obj.author }} - {{ obj.publisher }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
+</html>	
+
+
+

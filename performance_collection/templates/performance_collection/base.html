@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+<title>{% block head_title %}Performance Collection{% endblock head_title %}</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+       
+</head>
+<body>
+<div class='container'>
+<div class="row">
+  <div class="col-4" style="background:darkblue">
+{% load static %}
+<img src="{% static "/images/MusicLibraryLogo100px.png" %}" style="background:darkblue ; padding:1%; "alt="My image" width="30%"/></div>
+  {% load static %}
+<img src="{% static "/images/_DSF4192.jpg" %}" style="width:100%"alt="My image"/>
+{% include 'performance_collection\snippets\navigate.html' %}
+
+{% block content %}{% endblock content %}
+</div>
+
+
+</body>
+</html>
