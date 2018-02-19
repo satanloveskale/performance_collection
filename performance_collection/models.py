@@ -11,7 +11,7 @@ class Name(models.Model):
         return self.author
 
 class Subject(models.Model):
-    term = models.CharField(max_length=60,null=True, blank=True)
+    author = models.CharField(max_length=60,null=True, blank=True)
     def __str__(self):
         return self.term
 
@@ -19,7 +19,7 @@ class Score(models.Model):
     score_title = models.CharField(max_length=120,null=True, blank=True)
     call_number = models.CharField(max_length=20, blank=True)
     collection = models.CharField(max_length=60,null=True, blank=True)
-    author = models.ForeignKey('Name', on_delete=models.CASCADE,)
+    author = models.ManyToManyField(Name)
     arranger = models.CharField(max_length=120,null=True, blank=True)
     editor = models.CharField(max_length=120,null=True, blank=True)
     uniform_title = models.CharField(max_length=120,null=True, blank=True)
