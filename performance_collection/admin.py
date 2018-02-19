@@ -31,7 +31,7 @@ class NameAdmin(ImportExportModelAdmin):
 
 class SubjectAdmin(ImportExportModelAdmin):
     resource_class = SubjectResource
-    list_display = ( 'author', 'id')
+    list_display = ( 'term', 'id')
 
 admin.site.register(Score, ScoreAdmin)
 admin.site.register(Name, NameAdmin)
