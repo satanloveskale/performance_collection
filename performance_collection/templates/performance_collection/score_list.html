@@ -7,10 +7,10 @@
     {% endfor %}
 
 {% for obj in score_list %}
-    <li><a href='/performance_collection/{{ obj.slug }}/'>{{ obj }}</a>
-    <i>{{ obj.Call_number }}</i> {{ obj.author }} - {{ obj.publisher }}</li>
+     <div style="padding: 5px"><h4>{{ obj.call_number }}<a href='/performance_collection/{{ obj.slug }}/'><em> {{ obj }}</h4></em></a>
+  <span style="margin-left:3%"> {{ obj.author }} - {{ obj.publisher }}</span></div>
 {% endfor %}
-</ul>
+
 {% endblock %}
 </html>	
 
