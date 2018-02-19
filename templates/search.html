@@ -6,7 +6,7 @@
         {% if query %}
 
         </div>
-            <h4>Results</h4>
+         <div style="margin:10px;">   <h4>Results</h4>
             {% for result in page.object_list %}
                     <a href="{{ result.object.get_absolute_url }}"><h4>{{ result.object.title }}</a><br /><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; by :</b> {{ result.object.author }}. <b> <i>Call Number :</b></i> {{result.object.Call_number }} <small>({{result.object.collection }} collection)</small></h4></a>
 
