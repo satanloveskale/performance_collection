@@ -30,7 +30,7 @@ class Score(models.Model):
     plate_number = models.CharField(max_length=120,null=True, blank=True)
     publisher_number = models.CharField(max_length=120,null=True, blank=True)
     series = models.CharField(max_length=20,null=True, blank=True)
-    subject = models.ManyToManyField(Subject, null=True, blank=True)
+    subject = models.ManyToManyField(Subject)
     collation = models.CharField(max_length=120,null=True, blank=True)
     holdings = models.CharField(max_length=120, null=True,blank=True)
     medium = models.CharField(max_length=120,null=True, blank=True)
