@@ -7,11 +7,11 @@
                 
   </div>
         {% if query %}
-            <h3><small>Results</small></h3>
+       <div style="padding:10px">     <h3><small>  Search  Results</small></h3>
 
             {% for result in page.object_list %}
                 <p>
-               {{ result.object.call_number }}     <a href="{{ result.object.get_absolute_url }}">{{ result.object.score_title }}</a> / {{ result.object.author }}
+            <h4><medium>   {{ result.object.call_number }}</medium>   <a href="{{ result.object.get_absolute_url }}">{{ result.object.score_title }}</a> / <small>{{ result.object.author }}</small></h4>
                 </p><hr />
             {% empty %}
                 <p>No results found.</p>
